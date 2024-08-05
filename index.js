@@ -19,7 +19,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', '/index.html'));
 });
 
-
 // Route to get notes from db.json
 app.get('/api/notes', (req, res) => {
     // const filePath = path.join(__dirname, 'db', 'db.json');
@@ -76,6 +75,20 @@ app.post('/api/notes', (req, res) => {
         }
     });
 });
+
+
+// app.delete('/api/notes/:id', (req, res) => {
+//     const noteId = req.params.id;
+//     pool.query('DELETE FROM db WHERE id = $1', [noteId], (err) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).json({ error: 'Error deleting note' });
+//         } else {
+//             res.json({ status: 'ok' });
+//         }
+//     });
+// });
+
 
 app.listen(PORT, () =>
 console.log (`App listening at http://localhost:${PORT}`)

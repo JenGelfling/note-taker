@@ -7,6 +7,7 @@ body {
 
 .save-note, .new-note, .clear-btn {
   display: none;
+  /* visibility: hidden; */
 }
 
 .icons {
