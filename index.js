@@ -14,11 +14,6 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', '/notes.html'));
 });
 
-// Catch all route to index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', '/index.html'));
-});
-
 // Route to get notes from db.json
 app.get('/api/notes', (req, res) => {
     // const filePath = path.join(__dirname, 'db', 'db.json');
@@ -76,6 +71,10 @@ app.post('/api/notes', (req, res) => {
     });
 });
 
+// Catch all route to index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', '/index.html'));
+});
 
 // app.delete('/api/notes/:id', (req, res) => {
 //     const noteId = req.params.id;
